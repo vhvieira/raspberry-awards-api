@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-class MovieController {
+class AwardsController {
 
-    @GetMapping("/awards/producers")
+    @GetMapping("/interval/producers")
     public ResponseEntity getProducers() {
         return ResponseEntity.noContent().build();
     }
