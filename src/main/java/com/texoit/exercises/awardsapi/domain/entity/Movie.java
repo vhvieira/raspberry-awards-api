@@ -9,6 +9,7 @@ import lombok.Data;
 @Entity
 public class Movie {
     @Id
+    @GeneratedValue
     private Long movieId;
     private int releaseYear;
     private String title;
