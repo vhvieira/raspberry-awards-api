@@ -1,4 +1,4 @@
-package com.texoit.exercises.awardsapi.entity;
+package com.texoit.exercises.awardsapi.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,9 +9,8 @@ import lombok.Data;
 @Entity
 public class Movie {
     @Id
-    @GeneratedValue
-    private Long id;
-    private int year;
+    private Long movieId;
+    private int releaseYear;
     private String title;
     private String studios;
     private String producers;
