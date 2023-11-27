@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "01c09d6d-1804-423a-ac30-4908cd508bf1",
+		"name": "TexoIT_Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5092299",
+		"_collection_link": "https://liftydevteam.postman.co/workspace/Team-Workspace~c7aaa322-aa0d-4fe8-8510-609308565922/collection/5092299-01c09d6d-1804-423a-ac30-4908cd508bf1?action=share&source=collection_link&creator=5092299"
+	},
+	"item": [
+		{
+			"name": "retrieveIntervalByProducers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies-api/awards/interval/producers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"awards",
+						"interval",
+						"producers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveIntervalByStudios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies-api/awards/interval/studios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"awards",
+						"interval",
+						"studios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies-api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveMovieById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies-api/movies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNewMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"releaseYear\": 1982,\r\n        \"title\": \"Filme do Vitão\",\r\n        \"studios\": \"Associated Film Distribution\",\r\n        \"producers\": \"Allan Carr\",\r\n        \"winner\": true\r\n  }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movies-api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNewMovie Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"releaseYear\": 1982,\r\n        \"title\": \"Filme do Vitão (v2)\",\r\n        \"studios\": \"Associated Film Distribution\",\r\n        \"producers\": \"Allan Carrão\",\r\n        \"winner\": false\r\n  }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movies-api/movies/207",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"movies",
+						"207"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies-api/movies/206",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies-api",
+						"movies",
+						"206"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
