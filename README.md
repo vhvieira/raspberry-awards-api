@@ -25,5 +25,6 @@ A configuração acima ativa a quebra de nomes de produtores dentro de um mesmo 
 Na pasta docs existe uma coleção exportada de Postman para testar a aplicação usando o Postman.
 
 # Referencias e links #
-[Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-[Apache Maven] (https://maven.apache.org/install.html)
+- [Java 17] (https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Apache Maven] (https://maven.apache.org/install.html)
+- [POSTMAN] (https://www.postman.com/downloads/)
