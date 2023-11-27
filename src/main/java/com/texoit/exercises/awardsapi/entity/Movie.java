@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Entity
-class Movie {
+public class Movie {
     @Id
     @GeneratedValue
     private Long id;
