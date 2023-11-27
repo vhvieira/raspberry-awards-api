@@ -3,10 +3,8 @@ package com.texoit.exercises.awardsapi.application.usecases;
 import com.texoit.exercises.awardsapi.domain.entity.Movie;
 import com.texoit.exercises.awardsapi.infrastructure.persistence.MovieRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -37,12 +35,12 @@ public class LoadMovie {
                 String[] fields = line.split(";");
                 if(fields.length > 3) {
                     Movie movie = new Movie();
-                    movie.setReleaseYear(Integer.parseInt(fields[0]));
+                    movie.setReleaseYear(Long.parseLong(fields[0]));
                     movie.setTitle(fields[1]);
                     movie.setStudios(fields[2]);
                     movie.setProducers(fields[3]);
                     if(fields.length > 4) {
-                        movie.setWinner(Boolean.parseBoolean(fields[4]));
+                        movie.setWinner("yes".equalsIgnoreCase(fields[4]));
                     } else {
                         movie.setWinner(false);
                     }

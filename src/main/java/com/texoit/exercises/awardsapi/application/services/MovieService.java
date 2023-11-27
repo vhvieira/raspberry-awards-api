@@ -53,6 +53,11 @@ public class MovieService {
         repository.delete(filme);
     }
 
+    public Map<String, List<Movie>> getFilmesGroupedByStudios() {
+        List<Movie> filmes = repository.findAll();
+        return filmes.stream().collect(Collectors.groupingBy(Movie::getStudios));
+    }
+
     public Map<String, List<Movie>> getFilmesGroupedByProducers() {
         List<Movie> filmes = repository.findAll();
         return filmes.stream().collect(Collectors.groupingBy(Movie::getProducers));
