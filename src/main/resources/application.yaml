@@ -4,6 +4,10 @@ server:
   servlet:
     context-path: /movies-api
 
+#application config
+config:
+  breakNames: true
+
 #In memory database configuration
 spring:
   datasource:

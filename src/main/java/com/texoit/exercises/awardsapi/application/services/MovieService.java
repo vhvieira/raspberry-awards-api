@@ -1,8 +1,10 @@
 package com.texoit.exercises.awardsapi.application.services;
 
+import com.texoit.exercises.awardsapi.application.usecases.BreakMultipleProducers;
 import com.texoit.exercises.awardsapi.domain.entity.Movie;
 import com.texoit.exercises.awardsapi.infrastructure.persistence.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ import java.util.stream.Collectors;
 public class MovieService {
 
     private final MovieRepository repository;
+
+    @Value("${config.breakNames}")
+    private boolean breakProducersName;
 
     @Autowired
     public MovieService(MovieRepository repository) {
@@ -48,18 +53,23 @@ public class MovieService {
     }
 
     public void deleteMovie(Long id) {
-        Movie filme = repository.findById(id)
+        Movie movie = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid movie id: " + id));
-        repository.delete(filme);
+        repository.delete(movie);
     }
 
     public Map<String, List<Movie>> getFilmesGroupedByStudios() {
-        List<Movie> filmes = repository.findAll();
-        return filmes.stream().collect(Collectors.groupingBy(Movie::getStudios));
+        List<Movie> movies = repository.findAll();
+        return movies.stream().collect(Collectors.groupingBy(Movie::getStudios));
     }
 
     public Map<String, List<Movie>> getFilmesGroupedByProducers() {
-        List<Movie> filmes = repository.findAll();
-        return filmes.stream().collect(Collectors.groupingBy(Movie::getProducers));
+        List<Movie> movies = repository.findAll();
+        if(breakProducersName) {
+            BreakMultipleProducers useCase = new BreakMultipleProducers(movies);
+            return useCase.retrieveAllProducerMap();
+        }
+        //default return (breaking not active)
+        return movies.stream().collect(Collectors.groupingBy(Movie::getProducers));
     }
 }

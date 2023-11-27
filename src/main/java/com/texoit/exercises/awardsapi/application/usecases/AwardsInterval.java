@@ -119,6 +119,7 @@ public class AwardsInterval {
      * @return
      */
     public List<Movie> sortAndFilterList(String producer, List<Movie> list) {
+        //breaking in multiple lines to log all list without winners
         List<Movie> winnerList = list.stream().filter(Movie::isWinner).collect(Collectors.toList());;
         if(!CollectionUtils.isEmpty(winnerList)) {
                 return winnerList.stream().sorted(Comparator.comparingLong(Movie::getReleaseYear))
