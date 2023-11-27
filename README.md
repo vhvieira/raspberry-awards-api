@@ -7,11 +7,12 @@ Essa API contém Restful services for Golden Raspberry Awards
 ## Como executar ##
 
 ### No terminal de sua escolha executar: ###
-`mvn clean install`
-`mvn spring-boot:run`
+```mvn clean install```
+
+```mvn spring-boot:run```
 
 ### Para executar os testes ###
-`mvn test`
+```mvn test```
 
 ### Configurações ###
 O arquivo application.yml contém as configurações da aplicação.
