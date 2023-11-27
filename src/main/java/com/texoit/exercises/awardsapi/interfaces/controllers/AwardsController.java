@@ -25,7 +25,7 @@ class AwardsController {
     @GetMapping("/interval/studios")
     public ResponseEntity<ProducersAwards> getByStudios() {
         AwardsInterval useCase = new AwardsInterval(service);
-        return ResponseEntity.ok(useCase.findByProducers());
+        return ResponseEntity.ok(useCase.findByStudios());
     }
 
 }
